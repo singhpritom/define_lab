@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "MyBook", root_path, class: "navbar-brand"%>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%=link_to "authors", authors_index_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item">
+        <%=link_to "books", books_path, class: "nav-link"%>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,28 @@
+<div>
+ <%=link_to "create new author", new_book_path%>
+ <% @authors.each do |u| %>
+  <div class="row ">
+  	<div class="container">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="article-body">
+         <%= link_to u.firstname %>
+          <%= link_to u.lastname %>
+           <%= link_to u.dateofbirth %>
+          <div class="article-meta-details">
+            <small>last updated: <%= time_ago_in_words(u.updated_at) %> ago</small>  
+          </div>
+        </div>
+       
+          <div class="article-actions">
+            <%= link_to "Edit author", edit_author_path(u), class: "btn btn-xs btn-primary" %> 
+            <%= link_to "Delete author", author_path(u), method: :delete, 
+                                                data: { confirm: "Are you sure you want to delete this profile?" }, 
+                                                class: "btn btn-xs btn-danger" %>
+          </div>
+      </div>
+    </div>
+   </div>
+  </div>
+  </div>  
+<% end %>
